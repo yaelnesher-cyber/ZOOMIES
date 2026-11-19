@@ -76,6 +76,7 @@
   }
   .download:hover { filter: brightness(1.15); }
   .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  li, p { overflow-wrap: anywhere; }
   .small { font-size: 1rem; color: var(--muted); text-align: center; margin: .5rem 0; }
   .card {
     background: var(--card); border: 3px solid var(--border);
@@ -85,7 +86,8 @@
   ol.steps li { margin-bottom: .8rem; }
   .btnname {
     font-weight: 800; border: 2px solid var(--text); border-radius: .4rem;
-    padding: 0 .4rem; white-space: nowrap;
+    padding: 0 .4rem;
+    box-decoration-break: clone; -webkit-box-decoration-break: clone;
   }
   table { width: 100%; border-collapse: collapse; font-size: 1.1rem; }
   th, td { text-align: right; padding: .7rem .5rem; border-bottom: 2px solid var(--border); vertical-align: top; }
@@ -122,19 +124,35 @@
   <section aria-labelledby="dl-title">
     <h2 id="dl-title">הורדה</h2>
     <div class="download-wrap">
-      <a id="download" class="download" href="Zoomies.exe" download>
+      <a id="download" class="download" href="Zoomies.zip" download>
         הורדת Zoomies
       </a>
     </div>
-    <p class="small">גרסת בטא 1. קובץ אחד, Zoomies.exe, בערך 1.3 מגה-בייט. לא צריך להתקין.</p>
+    <p class="small">גרסת בטא 1. קובץ ZIP אחד, בערך 0.8 מגה-בייט. לא צריך להתקין.</p>
+    <p class="small">אפשר גם <a href="Zoomies.exe" download>להוריד את Zoomies.exe ישירות</a> (יש דפדפנים שחוסמים את זה).</p>
   </section>
 
   <section aria-labelledby="run-title">
     <h2 id="run-title">איך מפעילים בפעם הראשונה</h2>
     <ol class="steps">
-      <li>לוחצים על הכפתור <span class="btnname">הורדת Zoomies</span> ושומרים את הקובץ.</li>
-      <li>פותחים את התיקייה <span class="btnname">הורדות</span> ולוחצים פעמיים על <b>Zoomies.exe</b>.</li>
-      <li>בפעם הראשונה Windows עשוי להציג חלון כחול: <b>"Windows הגן על המחשב שלך"</b>. זה קורה לכל תוכנה חדשה שעוד לא מוכרת ל-Windows.
+      <li>לוחצים על הכפתור <span class="btnname">הורדת Zoomies</span>.</li>
+      <li>אם הדפדפן כותב שההורדה <b>נחסמה</b> או ש<b>הקובץ חשוד</b>, זה בסדר. זה קורה לכל תוכנה חדשה שעוד לא מוכרת.
+        <div class="card">
+          <p><b>בכרום (Chrome):</b></p>
+          <ol>
+            <li>לוחצים על סמל ההורדות (חץ למטה) בפינה העליונה של הדפדפן.</li>
+            <li>לוחצים על <span class="btnname">הורדת קובץ חשוד</span> (או <span class="btnname">שמור</span>), ומאשרים.</li>
+          </ol>
+          <p><b>באדג' (Edge):</b></p>
+          <ol>
+            <li>ברשימת ההורדות עומדים על הקובץ ולוחצים על שלוש הנקודות <b>...</b></li>
+            <li>לוחצים <span class="btnname">שמור</span>, אחר כך <span class="btnname">הצג עוד</span>, ואז <span class="btnname">שמור בכל זאת</span>.</li>
+          </ol>
+        </div>
+      </li>
+      <li>פותחים את התיקייה <span class="btnname">הורדות</span>, לוחצים על <b>Zoomies.zip</b> בלחצן הימני של העכבר ובוחרים <span class="btnname">חלץ הכל</span>, ואז <span class="btnname">חלץ</span>.</li>
+      <li>בתיקייה שנפתחת לוחצים פעמיים על <b>Zoomies.exe</b>.</li>
+      <li>בפעם הראשונה Windows עשוי להציג חלון כחול: <b>"Windows הגן על המחשב שלך"</b>.
         <div class="card">
           <ol>
             <li>לוחצים על הקישור <span class="btnname">מידע נוסף</span>.</li>
@@ -142,7 +160,6 @@
           </ol>
         </div>
       </li>
-      <li>אם הדפדפן מזהיר על הקובץ בזמן ההורדה, בוחרים <span class="btnname">שמור</span> או <span class="btnname">שמור בכל זאת</span>.</li>
       <li>עין ירוקה גדולה נפתחת על המסך, ונשמעת או מוצגת ההודעה <b>"זומיז מופעל"</b>. מעכשיו אפשר לצבוט כדי להגדיל.</li>
     </ol>
     <p>בהפעלה הראשונה Zoomies יוצרת קיצור בשולחן העבודה. כשסוגרים אותה, כל ההגדרות של המסך ושל Windows חוזרות למה שהיה קודם.</p>
