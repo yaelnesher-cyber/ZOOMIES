@@ -75,6 +75,7 @@
     min-width: min(100%, 18rem);
   }
   .download:hover { filter: brightness(1.15); }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
   .small { font-size: 1rem; color: var(--muted); text-align: center; margin: .5rem 0; }
   .card {
     background: var(--card); border: 3px solid var(--border);
@@ -179,7 +180,9 @@
   <section aria-labelledby="fb-title">
     <h2 id="fb-title">משוב ובעיות</h2>
     <p>זו גרסת ניסיון, והמשוב שלכם עוזר לנו לשפר אותה. משהו לא עובד, או יש רעיון?</p>
-    <p><!--CONTACT-->טופס המשוב יתווסף כאן בקרוב.<!--/CONTACT--></p>
+    <p><!--CONTACT--></p>
+    <div class="download-wrap"><a class="download" href="https://docs.google.com/forms/d/e/1FAIpQLSfLUOmaajnmlx5TlHHOEHfPOGbzu_V_TGnNOxjH_e9AKFrFNQ/viewform" target="_blank" rel="noopener">לטופס המשוב<span class="sr"> (נפתח בכרטיסייה חדשה)</span></a></div>
+    <p><!--/CONTACT--></p>
   </section>
 
   <footer>
