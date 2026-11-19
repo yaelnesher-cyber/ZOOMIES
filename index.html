@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zoomies - הורדה לבודקים</title>
+<meta name="description" content="Zoomies: הגדלת המסך ב-Windows בצביטה של שתי אצבעות, כמו בטלפון. גרסת ניסיון לבודקים.">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #111111;
+    --muted: #333333;
+    --card: #f3f7f3;
+    --border: #1d6a3a;
+    --accent: #1d6a3a;
+    --accent-text: #ffffff;
+    --focus: #000000;
+    --focus-glow: #ffd400;
+    --kbd-bg: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #000000;
+      --text: #ffffff;
+      --muted: #e8e8e8;
+      --card: #111a13;
+      --border: #6ee08f;
+      --accent: #ffd400;
+      --accent-text: #000000;
+      --focus: #ffffff;
+      --focus-glow: #ffd400;
+      --kbd-bg: #000000;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 125%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, "Noto Sans Hebrew", sans-serif;
+    line-height: 1.6;
+  }
+  .skip {
+    position: absolute; right: 1rem; top: -10rem;
+    background: var(--accent); color: var(--accent-text);
+    padding: .8rem 1.2rem; font-weight: 700; border-radius: .5rem;
+  }
+  .skip:focus { top: 1rem; }
+  main { max-width: 46rem; margin: 0 auto; padding: 1.5rem 16px 3rem; }
+  header.hero { text-align: center; padding-top: 1rem; }
+  header.hero img { width: 9rem; height: auto; }
+  h1 { font-size: 2.6rem; margin: .3rem 0 0; letter-spacing: .04em; }
+  .tagline { font-size: 1.35rem; margin: .5rem 0 1.5rem; }
+  .beta {
+    display: inline-block; border: 3px solid var(--border);
+    border-radius: 2rem; padding: .1rem 1rem; font-weight: 700; font-size: 1rem;
+  }
+  h2 { font-size: 1.6rem; margin: 2.5rem 0 .8rem; border-bottom: 4px solid var(--border); padding-bottom: .3rem; }
+  p, li { font-size: 1.1rem; }
+  a { color: inherit; text-decoration-thickness: 3px; text-underline-offset: 4px; }
+  a:focus-visible, .download:focus-visible {
+    outline: 5px solid var(--focus);
+    outline-offset: 4px;
+    box-shadow: 0 0 0 10px var(--focus-glow);
+  }
+  .download-wrap { text-align: center; margin: 1.5rem 0 .5rem; }
+  .download {
+    display: inline-block;
+    background: var(--accent); color: var(--accent-text);
+    font-size: 1.6rem; font-weight: 800; text-decoration: none;
+    padding: 1.1rem 2.4rem; border-radius: 1rem;
+    border: 4px solid var(--text);
+    min-width: min(100%, 18rem);
+  }
+  .download:hover { filter: brightness(1.15); }
+  .small { font-size: 1rem; color: var(--muted); text-align: center; margin: .5rem 0; }
+  .card {
+    background: var(--card); border: 3px solid var(--border);
+    border-radius: 1rem; padding: 1rem 1.3rem; margin: 1rem 0;
+  }
+  ol.steps { padding-inline-start: 1.8rem; }
+  ol.steps li { margin-bottom: .8rem; }
+  .btnname {
+    font-weight: 800; border: 2px solid var(--text); border-radius: .4rem;
+    padding: 0 .4rem; white-space: nowrap;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 1.1rem; }
+  th, td { text-align: right; padding: .7rem .5rem; border-bottom: 2px solid var(--border); vertical-align: top; }
+  th { font-size: 1.15rem; }
+  kbd {
+    direction: ltr; unicode-bidi: isolate; display: inline-block;
+    font-family: Consolas, "Segoe UI", monospace; font-weight: 700; font-size: 1.05rem;
+    background: var(--kbd-bg); border: 2px solid var(--text); border-radius: .35rem;
+    padding: 0 .4rem; white-space: nowrap;
+  }
+  footer { margin-top: 3rem; text-align: center; font-size: 1rem; color: var(--muted); }
+  @media (max-width: 520px) {
+    html { font-size: 112%; }
+    h1 { font-size: 2.1rem; }
+    th, td { display: block; border-bottom: none; padding: .2rem 0; }
+    tr { display: block; border-bottom: 2px solid var(--border); padding: .6rem 0; }
+    thead { display: none; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .download { transition: filter .15s; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#download">דילוג לכפתור ההורדה</a>
+<main>
+  <header class="hero">
+    <img src="eye.png" alt="" width="256" height="256">
+    <h1>ZOOMIES</h1>
+    <p class="tagline">הגדלת כל המסך ב-Windows בצביטה של שתי אצבעות, כמו בטלפון.<br>על משטח המגע ועל מסך מגע.</p>
+    <span class="beta">גרסת בטא 1 לבודקים</span>
+  </header>
+
+  <section aria-labelledby="dl-title">
+    <h2 id="dl-title">הורדה</h2>
+    <div class="download-wrap">
+      <a id="download" class="download" href="https://github.com/yaelnesher-cyber/zoomies/releases/latest/download/Zoomies.exe" download>
+        הורדת Zoomies
+      </a>
+    </div>
+    <p class="small">גרסת בטא 1. קובץ אחד, Zoomies.exe, בערך 1.3 מגה-בייט. לא צריך להתקין.</p>
+  </section>
+
+  <section aria-labelledby="run-title">
+    <h2 id="run-title">איך מפעילים בפעם הראשונה</h2>
+    <ol class="steps">
+      <li>לוחצים על הכפתור <span class="btnname">הורדת Zoomies</span> ושומרים את הקובץ.</li>
+      <li>פותחים את התיקייה <span class="btnname">הורדות</span> ולוחצים פעמיים על <b>Zoomies.exe</b>.</li>
+      <li>בפעם הראשונה Windows עשוי להציג חלון כחול: <b>"Windows הגן על המחשב שלך"</b>. זה קורה לכל תוכנה חדשה שעוד לא מוכרת ל-Windows.
+        <div class="card">
+          <ol>
+            <li>לוחצים על הקישור <span class="btnname">מידע נוסף</span>.</li>
+            <li>לוחצים על הכפתור <span class="btnname">הפעל בכל זאת</span>.</li>
+          </ol>
+        </div>
+      </li>
+      <li>אם הדפדפן מזהיר על הקובץ בזמן ההורדה, בוחרים <span class="btnname">שמור</span> או <span class="btnname">שמור בכל זאת</span>.</li>
+      <li>עין ירוקה גדולה נפתחת על המסך, ונשמעת או מוצגת ההודעה <b>"זומיז מופעל"</b>. מעכשיו אפשר לצבוט כדי להגדיל.</li>
+    </ol>
+    <p>בהפעלה הראשונה Zoomies יוצרת קיצור בשולחן העבודה. כשסוגרים אותה, כל ההגדרות של המסך ושל Windows חוזרות למה שהיה קודם.</p>
+  </section>
+
+  <section aria-labelledby="req-title">
+    <h2 id="req-title">מה צריך</h2>
+    <ul>
+      <li><b>Windows 11</b>, גרסה 24H2 או חדשה יותר.</li>
+      <li>משטח מגע (טאצ'פד) או מסך מגע. אפשר להגדיל גם עם העכבר והמקלדת.</li>
+      <li>עובדת לצד קוראי המסך NVDA ו-JAWS.</li>
+      <li>רוצים ש-Zoomies תיפתח לבד בכל כניסה ל-Windows? בתפריט של Zoomies (<kbd>Ctrl+Alt+M</kbd>) בוחרים <span class="btnname">זומיז נפתח מעצמו בכניסה ל-Windows</span>.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="keys-title">
+    <h2 id="keys-title">הפעולות העיקריות</h2>
+    <table>
+      <thead><tr><th scope="col">מה עושים</th><th scope="col">מה קורה</th></tr></thead>
+      <tbody>
+        <tr><td>צביטה בשתי אצבעות</td><td>הגדלה והקטנה של כל המסך, עד פי 10</td></tr>
+        <tr><td>גרירה בשתי אצבעות</td><td>כשהמסך מוגדל: הזזת התצוגה. בקצה המסך הדף ממשיך להיגלל</td></tr>
+        <tr><td><kbd>Win</kbd> + גלגלת העכבר</td><td>הגדלה והקטנה עם העכבר</td></tr>
+        <tr><td><kbd>Win</kbd> + <kbd>+</kbd> / <kbd>-</kbd></td><td>הגדלה והקטנה מהמקלדת</td></tr>
+        <tr><td><kbd>Ctrl+Alt+Z</kbd></td><td>הפעלה וסגירה של Zoomies</td></tr>
+        <tr><td><kbd>Ctrl+Alt+X</kbd></td><td>השהיה וחזרה ל-100%. לחיצה נוספת מחזירה את ההגדלה</td></tr>
+        <tr><td><kbd>Ctrl+Alt+M</kbd></td><td>תפריט ההגדרות</td></tr>
+        <tr><td><kbd>Ctrl+Alt+T</kbd></td><td>סרגל הכלים</td></tr>
+        <tr><td><kbd>Ctrl+Alt+I</kbd></td><td>ניגודיות גבוהה של Windows</td></tr>
+        <tr><td>לחיצה קצרה על <kbd>Ctrl</kbd></td><td>טבעת שמראה איפה סמן העכבר</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section aria-labelledby="fb-title">
+    <h2 id="fb-title">משוב ובעיות</h2>
+    <p>זו גרסת ניסיון, והמשוב שלכם עוזר לנו לשפר אותה. משהו לא עובד, או יש רעיון?</p>
+    <p><!--CONTACT-->טופס המשוב יתווסף כאן בקרוב.<!--/CONTACT--></p>
+  </section>
+
+  <footer>
+    <p>Zoomies פותחה ב<b>מגדל אור</b>.</p>
+  </footer>
+</main>
+</body>
+</html>
